@@ -3,7 +3,7 @@ import java.util.Map;
 
 public class Solution {
     public int solution(int[] array) {
-        int mode = -1;  
+        int answer = -1;  
         int maxFrequency = 0;
 
         for (int i = 0; i < array.length; i++) {
@@ -18,12 +18,12 @@ public class Solution {
 
             if (currentFrequency > maxFrequency) {
                 maxFrequency = currentFrequency;
-                mode = currentNumber;
+                answer = currentNumber;
             } else if (currentFrequency == maxFrequency) {
-                mode = -1;
+                answer = -1;
             }
         }
 
-        return mode;
+        return answer;
     }
 }
