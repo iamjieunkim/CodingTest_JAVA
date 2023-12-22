@@ -10,9 +10,8 @@ class Solution {
             mult *= num_list[i];
         }
         
-        int sp = (int)Math.pow(sum, 2);
         
-        answer = (mult < sp) ? 1 :0;
+        answer = (mult < sum*sum) ? 1 :0;
         
         return answer;
     }
