@@ -7,8 +7,6 @@ class Solution {
                 if(arr[i]==1){
                     answer = i;
                     break;
-                }else{
-                    answer = -1;
                 }
             }else if(i<idx){
                 answer = -1;
