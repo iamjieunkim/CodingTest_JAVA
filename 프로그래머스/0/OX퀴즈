@@ -1,1 +1,73 @@
 프로그래머스 오류로 자동 커밋이 되지 않아서 오류해결후 업로드 예정
+class Solution {
+    public String[] solution(String[] quiz) {
+        String[] answer = new String[quiz.length];
+
+        for(int i=0; i< quiz.length; i++){
+            String a = "";
+            a = quiz[i].trim();
+            a = quiz[i].replaceAll("--", "+");
+            a = quiz[i].replaceAll("\\s+", "");
+
+            if(a.charAt(0)=='-'){
+                String T = a.substring(1, a.length());
+                if(T.indexOf("+")==-1){
+                    //-일 경우
+                    int x = T.indexOf("-");
+                    int y = T.indexOf("=");
+                    int x1 = Integer.parseInt(T.substring(0,x));
+                    int x2 = Integer.parseInt(T.substring(x+1, y));
+                    int ans = Integer.parseInt(T.substring(y+1,T.length()));
+                    int c = -x1-x2;
+                    if(c==ans){
+                        answer[i]="O";
+                    }else{
+                        answer[i]="X";
+                    }
+                } else {
+                    int x = T.indexOf("+");
+                    int y = T.indexOf("=");
+                    int x1 = Integer.parseInt(T.substring(0,x));
+                    int x2 = Integer.parseInt(T.substring(x+1, y));
+                    int ans = Integer.parseInt(T.substring(y+1,(T.length())));
+                    int c = -x1+x2;
+                    if(c==ans){
+                        answer[i]="O";
+                    }else{
+                        answer[i]="X";
+                    }
+                }
+            }else{
+                if(a.indexOf("+")==-1){
+                    //-일 경우
+                    int x = a.indexOf("-");
+                    int y = a.indexOf("=");
+                    int x1 = Integer.parseInt(a.substring(0,x));
+                    int x2 = Integer.parseInt(a.substring(x+1, y));
+                    int ans = Integer.parseInt(a.substring(y+1,a.length()));
+                    int c = x1-x2;
+                    if(c==ans){
+                        answer[i]="O";
+                    }else{
+                        answer[i]="X";
+                    }
+                } else {
+                    int x = a.indexOf("+");
+                    int y = a.indexOf("=");
+                    int x1 = Integer.parseInt(a.substring(0,x));
+                    int x2 = Integer.parseInt(a.substring(x+1, y));
+                    int ans = Integer.parseInt(a.substring(y+1,(a.length())));
+                    int c = x1+x2;
+                    if(c==ans){
+                        answer[i]="O";
+                    }else{
+                        answer[i]="X";
+                    }
+                }
+            }
+
+
+        }
+        return answer;
+    }
+}
