@@ -25,6 +25,7 @@ class Solution {
                         answer[i]="X";
                     }
                 } else {
+                    //+일 경우
                     int x = T.indexOf("+");
                     int y = T.indexOf("=");
                     int x1 = Integer.parseInt(T.substring(0,x));
