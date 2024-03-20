@@ -14,15 +14,8 @@ class Solution {
         Arrays.sort(b);
         Arrays.sort(a);
 
-        String na = "";
-        String nb = "";
 
-        for(int j=0; j<a.length; j++){
-            na += a[j];
-            nb += b[j];
-        }
-
-        answer = na.equals(nb)?1:0;
+        answer = Arrays.equals(a,b)?1:0;
         
         return answer;
     }
