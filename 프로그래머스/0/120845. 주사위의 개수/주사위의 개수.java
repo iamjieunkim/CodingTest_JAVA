@@ -1,6 +1,6 @@
 class Solution {
     public int solution(int[] box, int n) {
-        int answer = 0;
+        int answer = 1;
         
         int a = box[0]/n;
         int b = box[1]/n;
