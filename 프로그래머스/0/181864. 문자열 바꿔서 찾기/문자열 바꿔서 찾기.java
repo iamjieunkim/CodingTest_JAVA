@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class Solution {
     public int solution(String myString, String pat) {
         int answer = 0;
@@ -15,5 +16,13 @@ class Solution {
         answer = myString.indexOf(str)==-1?0:1;
         
         return answer;
+    }
+    
+    public static void main(String[] args){
+        Solution T = new Solution();
+        Scanner sc = new Scanner(System.in);
+        String myString = sc.next();
+        String pat = sc.next();
+        System.out.println(T.solution(myString, pat));
     }
 }
