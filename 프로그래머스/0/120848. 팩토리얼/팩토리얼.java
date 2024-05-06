@@ -1,3 +1,4 @@
+import java.util.*;
 class Solution {
     public int solution(int n) {
         int x = 1;
@@ -25,5 +26,12 @@ class Solution {
         }
         
         return answer;
+    }
+    
+    public static void main(String[] args){
+        Solution T = new Solution();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        System.out.println(T.solution(n));
     }
 }
