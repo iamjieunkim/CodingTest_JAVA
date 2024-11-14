@@ -36,53 +36,25 @@ class Solution
 {
 	public static void main(String args[]) throws Exception
 	{
-		/*
-		   아래의 메소드 호출은 앞으로 표준 입력(키보드) 대신 input.txt 파일로부터 읽어오겠다는 의미의 코드입니다.
-		   여러분이 작성한 코드를 테스트 할 때, 편의를 위해서 input.txt에 입력을 저장한 후,
-		   이 코드를 프로그램의 처음 부분에 추가하면 이후 입력을 수행할 때 표준 입력 대신 파일로부터 입력을 받아올 수 있습니다.
-		   따라서 테스트를 수행할 때에는 아래 주석을 지우고 이 메소드를 사용하셔도 좋습니다.
-		   단, 채점을 위해 코드를 제출하실 때에는 반드시 이 메소드를 지우거나 주석 처리 하셔야 합니다.
-		 */
-		//System.setIn(new FileInputStream("res/input.txt"));
-
-		/*
-		   표준입력 System.in 으로부터 스캐너를 만들어 데이터를 읽어옵니다.
-		 */
 		Scanner sc = new Scanner(System.in);
-		int T;
-		T=sc.nextInt();
-		/*
-		   여러 개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-		*/
-
-		for(int tc=1; tc<=T; tc++){
-            int N = sc.nextInt();
-            int[] score = new int[1000];
-            for(int i=0; i<score.length; i++){
-                score[i] = sc.nextInt();
+        int T = sc.nextInt();
+        for (int t = 1; t <= T; t++) {
+            sc.nextInt();
+            int[] scores = new int[101]; // 100점 까지 점수 나온 점수의 개수 저장
+            for (int i = 0; i < 1000; i++) { // 1000명의 학생의 점수 입력
+                scores[sc.nextInt()]++;
             }
-
-            boolean check[] = new boolean[101];
-            int count[] = new int[101];
-            for(int i=0; i< score.length; i++){
-                if(check[score[i]]==false){
-                    count[score[i]] += 1;
-                }
-            }
-
-            int max = count[0];
-            int answer = 0;
+            int max = 0, idx = 0; // 최빈값과 최빈값인 점수 저장 변수
+            
+            
             for(int i=0; i<101; i++){
-                if(max<count[i]){
-                    max=count[i];
-                    answer=i;
-                } else if (max==count[i]) {
-                    if(answer<i){
-                        answer=i;
-                    }
+                if(scores[i]>=max){
+                    max = scores[i]; // 빈도수 저장
+                    idx = i; // 최빈값 점수
                 }
             }
-            System.out.println("#"+N+" "+answer);
+
+            System.out.printf("#%d %d\n", t, idx);
         }
 	}
 }
