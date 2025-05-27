@@ -1,10 +1,10 @@
 # [level 0] 짝수의 합 - 120831 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120831) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120831?language=kotlin) 
 
 ### 성능 요약
 
-메모리: 71.2 MB, 시간: 0.02 ms
+메모리: 65 MB, 시간: 0.39 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 04월 18일 01:05:48
+2025년 05월 27일 17:57:22
 
 ### 문제 설명
 
